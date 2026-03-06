@@ -32,6 +32,7 @@ In November 2024, U.S. President-elect Donald Trump said that Musk would become 
         model="gemini-2.5-flash",
         api_key=os.environ.get("GOOGLE_API_KEY")  
     )
+    #llm = ChatOllama(temperature=0,model="gemma3:270m")
     chain = summary_prompt_template | llm
     response = chain.invoke(input={"information": information})
     print(response.content)
